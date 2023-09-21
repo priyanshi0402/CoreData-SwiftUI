@@ -10,11 +10,19 @@ import SwiftUI
 @main
 struct CoreData_SwiftUIApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject private var appRootManager = AppRootManager()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            Group {
+                switch appRootManager.currentRoot {
+                case .splash:
+                    SplashScreenView()
+                case .home:
+                    CollegeFromView()
+                }
+            }
+            .environmentObject(appRootManager)
         }
     }
 }

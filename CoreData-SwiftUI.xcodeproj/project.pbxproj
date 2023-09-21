@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */; };
+		5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503D2ABB33B300181F7A /* StateCityView.swift */; };
+		5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */; };
+		5BDB50462ABC29B100181F7A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB50452ABC29B100181F7A /* Network.swift */; };
 		AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */; };
-		AF39E2B12AB98238009F96D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B02AB98238009F96D4 /* ContentView.swift */; };
+		AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */; };
 		AF39E2B32AB9823B009F96D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF39E2B22AB9823B009F96D4 /* Assets.xcassets */; };
 		AF39E2B62AB9823B009F96D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF39E2B52AB9823B009F96D4 /* Preview Assets.xcassets */; };
 		AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B72AB9823B009F96D4 /* Persistence.swift */; };
@@ -16,9 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		5BDB503D2ABB33B300181F7A /* StateCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCityView.swift; sourceTree = "<group>"; };
+		5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		5BDB50452ABC29B100181F7A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		AF39E2AB2AB98238009F96D4 /* CoreData-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_SwiftUIApp.swift; sourceTree = "<group>"; };
-		AF39E2B02AB98238009F96D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeFromView.swift; sourceTree = "<group>"; };
 		AF39E2B22AB9823B009F96D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF39E2B52AB9823B009F96D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF39E2B72AB9823B009F96D4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -37,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B8D66A42AB9953900B91E97 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AF39E2B92AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld */,
+				5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */,
+				AF39E2B72AB9823B009F96D4 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5BDB50442ABC29AA00181F7A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5BDB50452ABC29B100181F7A /* Network.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		AF39E2A22AB98238009F96D4 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +82,14 @@
 		AF39E2AD2AB98238009F96D4 /* CoreData-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5BDB50442ABC29AA00181F7A /* API */,
+				5B8D66A42AB9953900B91E97 /* CoreData */,
 				AF39E2C12AB98367009F96D4 /* Info.plist */,
 				AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */,
-				AF39E2B02AB98238009F96D4 /* ContentView.swift */,
+				5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */,
+				AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */,
+				5BDB503D2ABB33B300181F7A /* StateCityView.swift */,
 				AF39E2B22AB9823B009F96D4 /* Assets.xcassets */,
-				AF39E2B72AB9823B009F96D4 /* Persistence.swift */,
-				AF39E2B92AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld */,
 				AF39E2B42AB9823B009F96D4 /* Preview Content */,
 			);
 			path = "CoreData-SwiftUI";
@@ -145,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */,
+				5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */,
+				5BDB50462ABC29B100181F7A /* Network.swift in Sources */,
 				AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */,
-				AF39E2B12AB98238009F96D4 /* ContentView.swift in Sources */,
+				5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */,
+				AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */,
 				AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */,
 				AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */,
 			);
