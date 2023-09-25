@@ -14,7 +14,6 @@ struct StateCityView: View {
     var isForCity: Bool = false
     @Binding var selectedValue: String
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     
     var body: some View {
         VStack {

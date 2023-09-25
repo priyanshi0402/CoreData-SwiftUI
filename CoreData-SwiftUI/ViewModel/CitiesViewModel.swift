@@ -10,7 +10,7 @@ import Foundation
 class CitiesViewModel: ObservableObject {
     @Published var citiesData: [Cities] = []
     @Published var isLoading = false
-    
+
     func fetchCitiesData(from state: String) async {
         isLoading = true
         do {

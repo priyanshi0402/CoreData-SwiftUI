@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B0368172ABEDB12001DE41F /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0368162ABEDB12001DE41F /* Cities.swift */; };
 		5B03681A2ABEDCAB001DE41F /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */; };
+		5B03681C2AC17426001DE41F /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B03681B2AC17426001DE41F /* CollegeListView.swift */; };
 		5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */; };
 		5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503D2ABB33B300181F7A /* StateCityView.swift */; };
 		5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		5B0368162ABEDB12001DE41F /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		5B03681B2AC17426001DE41F /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
 		5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		5BDB503D2ABB33B300181F7A /* StateCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCityView.swift; sourceTree = "<group>"; };
 		5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				AF39E2C12AB98367009F96D4 /* Info.plist */,
 				AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */,
 				5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */,
+				5B03681B2AC17426001DE41F /* CollegeListView.swift */,
 				AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */,
 				5BDB503D2ABB33B300181F7A /* StateCityView.swift */,
 				AF39E2B22AB9823B009F96D4 /* Assets.xcassets */,
@@ -204,6 +207,7 @@
 				5B0368172ABEDB12001DE41F /* Cities.swift in Sources */,
 				AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */,
 				AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */,
+				5B03681C2AC17426001DE41F /* CollegeListView.swift in Sources */,
 				5B03681A2ABEDCAB001DE41F /* CitiesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

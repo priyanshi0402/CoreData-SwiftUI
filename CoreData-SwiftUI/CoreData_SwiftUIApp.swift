@@ -19,7 +19,7 @@ struct CoreData_SwiftUIApp: App {
                 case .splash:
                     SplashScreenView()
                 case .home:
-                    CollegeFromView()
+                    CollegeListView()
                 }
             }
             .environmentObject(appRootManager)
