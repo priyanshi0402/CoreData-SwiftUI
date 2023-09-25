@@ -35,6 +35,14 @@ struct SplashScreenView: View {
             withAnimation(.easeInOut(duration: 1.5)) {
                 logoScale = 1.0
                 let statesData = CoreDataHelper.shared.fetchData(type: States.self, entityName: "States")
+                Task {
+                    do {
+                        let token = try await APIManager.shared.fetchToken()
+                        StorageManager.shared.setToken(token)
+                    } catch {
+                        print(error)
+                    }
+                }
                 if statesData.count == 0 {
                     let country = currentCountry
                     Task {
@@ -59,7 +67,7 @@ struct SplashScreenView: View {
                         }
                     }
                     print(statesData)
-                }                
+                }
             }
             withAnimation(.easeIn(duration: 1.0).delay(0.5)) {
                 textOpacity = 1.0 // Final opacity value

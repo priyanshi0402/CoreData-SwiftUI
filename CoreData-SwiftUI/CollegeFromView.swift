@@ -10,7 +10,6 @@ import CoreData
 
 final class AppRootManager: ObservableObject {
     @Published var currentRoot: RootView = .splash
-    
     enum RootView {
         case splash
         case home
@@ -19,109 +18,113 @@ final class AppRootManager: ObservableObject {
 
 struct CollegeFromView: View {
 
-    @State private var selectedCategory: String = "Test"
-    @State private var collegeName: String = "Test"
+    @State private var selectedState: String = "Select State"
+    @State private var selectedCity: String = "Select City"
+    @State private var collegeName: String = ""
+    @State private var universityName: String = ""
     @State private var isShowPicker = false
+    @State private var isShowCityPicker = false
+    var allStates = CoreDataHelper.shared.fetchData(type: States.self, entityName: "States")
+    var citiesViewModel = CitiesViewModel()
+    @State private var isShowProgress = false
     
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    Picker("State", selection: $selectedCategory) {
-                        Text("Test")
-                        Text("Test1")
-                        Text("Test2")
-                        Text("Test3")
-                        Text("Test4")
-                    }
-                } header: {
-                    Text("Suggested Course")
-                }
-                
-                if #available(iOS 16.0, *) {
-                    Picker("City", selection: $selectedCategory) {
-                        Text("Test")
-                        Text("Test1")
-                        Text("Test2")
-                        Text("Test3")
-                        Text("Test4")
-                        Text("Test5")
-                        Text("Test6")
-                    }
-                    .pickerStyle(.navigationLink)
-                } else {
-                    NavigationLink(destination: StateCityView(), isActive: $isShowPicker) {
-                        Button {
-                            self.isShowPicker = true
-                        } label: {
-                            VStack {
-                                HStack {
-                                    Text("State")
-                                        .foregroundColor(.black)
-                                    Spacer()
-                                    Text(self.selectedCategory)
-                                        .foregroundColor(.secondary)
-                                }
+                Section(header: Text("College Details")) {
+                    TextField("Enter college Name", text: $collegeName)
+                    if #available(iOS 16.0, *) {
+                        Picker("State", selection: $selectedState) {
+                            ForEach(allStates, id: \.stateName) {
+                                Text($0.stateName ?? "")
+                                    .tag($0.stateName ?? "")
                             }
                         }
-                        
+                        .onChange(of: selectedState, perform: { newValue in
+                            Task {
+                                await self.citiesViewModel.fetchCitiesData(from: newValue)
+                            }
+                        })
+                        .pickerStyle(.navigationLink)
+                    } else {
+                        CustomNavigationPicker(destinationView: StateCityView(allStates: allStates, selectedValue: $selectedState), selectedValue: $selectedState, isShowPicker: $isShowPicker, title: "State")
+                            .onChange(of: selectedState) { newValue in
+                                Task {
+                                    await self.citiesViewModel.fetchCitiesData(from: newValue)
+                                }
+                            }
                     }
                     
+                    if self.citiesViewModel.isLoading {
+                        ProgressView()
+                    } else {
+                        if #available(iOS 16.0, *) {
+                            Picker("City", selection: $selectedCity) {
+                                ForEach(self.citiesViewModel.citiesData, id: \.city_name) {
+                                    Text($0.city_name ?? "")
+                                        .tag($0.city_name ?? "")
+                                }
+                            }
+                            .pickerStyle(.navigationLink)
+                        } else {
+                            CustomNavigationPicker(destinationView: StateCityView(allcities: self.citiesViewModel.citiesData, isForCity: true, selectedValue: $selectedCity), selectedValue: $selectedCity, isShowPicker: $isShowCityPicker, title: "City")
+                        }
+                    }
+                     
+                    
+                    TextField("Enter university Name", text: $universityName)
                 }
                 
-                Picker("State", selection: $selectedCategory) {
-                    Text("Test")
-                    Text("Test1")
-                    Text("Test2")
-                    Text("Test3")
-                    Text("Test4")
+                Section {
+                    HStack {
+                        Spacer()
+                        Button {
+                            let college = College(context: CoreDataHelper.shared.viewContext)
+                            college.id = UUID().uuidString
+                            college.name = self.collegeName
+                            college.city = self.selectedCity
+                            college.university = self.universityName
+                            CoreDataHelper.shared.saveData(college)
+                        } label: {
+                            Text("Save Data")
+                        }
+                        Spacer()
+                    }
                 }
-                
-                Button {
-                    let college = College(context: CoreDataHelper.shared.viewContext)
-                    college.id = UUID().uuidString
-                    college.name = "SD Jain College"
-                    college.city = "Surat"
-                    college.university = "Veer nermad gujarat universiy"
-                    CoreDataHelper.shared.saveData(college)
-                } label: {
-                    Text("Save Data")
-                }
+                .frame(height: 40)
             }
             .navigationTitle("College")
         }
+        
     }
+    
+}
 
-//    private func addItem() {
-//        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
-
-//    private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { items[$0] }.forEach(viewContext.delete)
-//
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
-//    }
+struct CustomNavigationPicker<Destination: View>: View {
+    
+    var destinationView: Destination
+    @Binding var selectedValue: String
+    @Binding var isShowPicker: Bool
+    var title: String
+    
+    var body: some View {
+        NavigationLink(destination: destinationView , isActive: $isShowPicker) {
+            Button {
+                self.isShowPicker = true
+            } label: {
+                VStack {
+                    HStack {
+                        Text(title)
+                            .foregroundColor(.black)
+                        Spacer()
+                        Text(self.selectedValue)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+            
+        }
+    }
 }
 
 private let itemFormatter: DateFormatter = {

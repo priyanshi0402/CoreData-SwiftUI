@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0368172ABEDB12001DE41F /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0368162ABEDB12001DE41F /* Cities.swift */; };
+		5B03681A2ABEDCAB001DE41F /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */; };
 		5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */; };
 		5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503D2ABB33B300181F7A /* StateCityView.swift */; };
 		5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B0368162ABEDB12001DE41F /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
 		5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		5BDB503D2ABB33B300181F7A /* StateCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCityView.swift; sourceTree = "<group>"; };
 		5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -45,6 +49,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B0368152ABEDAE1001DE41F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5B0368162ABEDB12001DE41F /* Cities.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5B0368182ABEDC9B001DE41F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5B8D66A42AB9953900B91E97 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,8 @@
 		AF39E2AD2AB98238009F96D4 /* CoreData-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5B0368182ABEDC9B001DE41F /* ViewModel */,
+				5B0368152ABEDAE1001DE41F /* Model */,
 				5BDB50442ABC29AA00181F7A /* API */,
 				5B8D66A42AB9953900B91E97 /* CoreData */,
 				AF39E2C12AB98367009F96D4 /* Info.plist */,
@@ -179,8 +201,10 @@
 				AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */,
 				5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */,
 				AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */,
+				5B0368172ABEDB12001DE41F /* Cities.swift in Sources */,
 				AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */,
 				AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */,
+				5B03681A2ABEDCAB001DE41F /* CitiesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
