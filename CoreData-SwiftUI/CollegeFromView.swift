@@ -19,18 +19,21 @@ final class AppRootManager: ObservableObject {
 struct CollegeFromView: View {
     
     @State private var selectedState: String = "Select State"
+//    @State private var text = ""
     @State private var selectedCity: String = ""
     @State private var collegeName: String = ""
     @State private var universityName: String = ""
     @State private var isShowPicker = false
     @State private var isShowCityPicker = false
     var allStates = CoreDataHelper.shared.fetchData(type: States.self, entityName: "States")
-    var citiesViewModel = CitiesViewModel()
+    @ObservedObject var citiesViewModel = CitiesViewModel()
+    var isForView: Bool = false
+    var college: College? = nil
     
     var body: some View {
         Form {
             Section(header: Text("College Details")) {
-                TextField("Enter college Name", text: $collegeName)
+                CustomTextField(bindingText: $collegeName, mode: isForView ? .view : .add, text: self.college?.name ?? "", placeHolder: "Enter college Name")
                 if #available(iOS 16.0, *) {
                     Picker("State", selection: $selectedState) {
                         ForEach(allStates, id: \.stateName) {
@@ -53,22 +56,19 @@ struct CollegeFromView: View {
                         }
                 }
                 
-                if self.citiesViewModel.isLoading {
-                    ProgressView()
-                } else {
-                    if #available(iOS 16.0, *) {
-                        Picker("City", selection: $selectedCity) {
-                            ForEach(self.citiesViewModel.citiesData, id: \.city_name) {
-                                Text($0.city_name ?? "")
-                                    .tag($0.city_name ?? "")
-                            }
+                if #available(iOS 16.0, *) {
+                    Picker("City", selection: $selectedCity) {
+                        ForEach(self.citiesViewModel.citiesData, id: \.city_name) {
+                            Text($0.city_name ?? "")
+                                .tag($0.city_name ?? "")
                         }
-                        .pickerStyle(.navigationLink)
-                    } else {
-                        CustomNavigationPicker(destinationView: StateCityView(allcities: self.citiesViewModel.citiesData, isForCity: true, selectedValue: $selectedCity), selectedValue: $selectedCity, isShowPicker: $isShowCityPicker, title: "City")
                     }
+                    .disabled(self.citiesViewModel.citiesData.isEmpty)
+                    .pickerStyle(.navigationLink)
+                } else {
+                    CustomNavigationPicker(destinationView: StateCityView(allcities: self.citiesViewModel.citiesData, isForCity: true, selectedValue: $selectedCity), selectedValue: $selectedCity, isShowPicker: $isShowCityPicker, title: "City")
                 }
-                TextField("Enter university Name", text: $universityName)
+                CustomTextField(bindingText: $universityName, mode: isForView ? .view : .add, text: self.college?.name ?? "", placeHolder: "Enter university Name")
             }
             
             Section {
@@ -86,12 +86,31 @@ struct CollegeFromView: View {
     
 }
 
+struct CustomTextField: View {
+    @Binding var bindingText: String
+    @State var mode: Mode = .add
+    var text = ""
+    var placeHolder: String
+    
+    var body: some View {
+        switch mode {
+        case .view:
+            Text(text)
+        case .edit:
+            TextField(placeHolder, text: $bindingText)
+        case .add:
+            TextField(placeHolder, text: $bindingText)
+        }
+    }
+}
+
 struct SaveButton: View {
     var collegeName: String = ""
     var city: String = ""
     var university: String = ""
     @State private var isShowAlert = false
     @State private var alertMessage = ""
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     var body: some View {
         Button {
@@ -118,6 +137,7 @@ struct SaveButton: View {
             college.city = self.city
             college.university = self.university
             CoreDataHelper.shared.saveData(college)
+            presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Save Data")
         }.alert(isPresented: $isShowAlert) {
@@ -137,7 +157,6 @@ extension Alert {
 }
 
 struct CustomNavigationPicker<Destination: View>: View {
-    
     var destinationView: Destination
     @Binding var selectedValue: String
     @Binding var isShowPicker: Bool
@@ -162,13 +181,6 @@ struct CustomNavigationPicker<Destination: View>: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

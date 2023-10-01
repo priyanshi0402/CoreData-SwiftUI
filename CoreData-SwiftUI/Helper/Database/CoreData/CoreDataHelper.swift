@@ -10,11 +10,12 @@ import CoreData
 
 class CoreDataHelper {
     static let shared = CoreDataHelper()
+    
     var viewContext: NSManagedObjectContext {
         return PersistenceController.shared.container.viewContext
     }
     
-    func saveData<T:NSManagedObject>(_ object: T) {
+    func saveData<T: NSManagedObject>(_ object: T) {
         do {
             try viewContext.save()
         } catch {

@@ -11,6 +11,8 @@
 		5B03681A2ABEDCAB001DE41F /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */; };
 		5B03681C2AC17426001DE41F /* CollegeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B03681B2AC17426001DE41F /* CollegeListView.swift */; };
 		5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */; };
+		5B8F842A2AC29DD200A0629F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F84292AC29DD200A0629F /* StorageManager.swift */; };
+		5BAF63822AC80D0A00E7544E /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF63812AC80D0A00E7544E /* Enums.swift */; };
 		5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503D2ABB33B300181F7A /* StateCityView.swift */; };
 		5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */; };
 		5BDB50462ABC29B100181F7A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB50452ABC29B100181F7A /* Network.swift */; };
@@ -27,6 +29,8 @@
 		5B0368192ABEDCAB001DE41F /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
 		5B03681B2AC17426001DE41F /* CollegeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeListView.swift; sourceTree = "<group>"; };
 		5B8D66A52AB9955700B91E97 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		5B8F84292AC29DD200A0629F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		5BAF63812AC80D0A00E7544E /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5BDB503D2ABB33B300181F7A /* StateCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateCityView.swift; sourceTree = "<group>"; };
 		5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5BDB50452ABC29B100181F7A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -77,6 +81,24 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		5B8F84272AC29D9E00A0629F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5B8F84282AC29DA200A0629F /* Database */,
+				5BAF63812AC80D0A00E7544E /* Enums.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		5B8F84282AC29DA200A0629F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5B8D66A42AB9953900B91E97 /* CoreData */,
+				5B8F84292AC29DD200A0629F /* StorageManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		5BDB50442ABC29AA00181F7A /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +126,10 @@
 		AF39E2AD2AB98238009F96D4 /* CoreData-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F84272AC29D9E00A0629F /* Helper */,
 				5B0368182ABEDC9B001DE41F /* ViewModel */,
 				5B0368152ABEDAE1001DE41F /* Model */,
 				5BDB50442ABC29AA00181F7A /* API */,
-				5B8D66A42AB9953900B91E97 /* CoreData */,
 				AF39E2C12AB98367009F96D4 /* Info.plist */,
 				AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */,
 				5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */,
@@ -201,9 +223,11 @@
 				5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */,
 				5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */,
 				5BDB50462ABC29B100181F7A /* Network.swift in Sources */,
+				5B8F842A2AC29DD200A0629F /* StorageManager.swift in Sources */,
 				AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */,
 				5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */,
 				AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */,
+				5BAF63822AC80D0A00E7544E /* Enums.swift in Sources */,
 				5B0368172ABEDB12001DE41F /* Cities.swift in Sources */,
 				AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */,
 				AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */,
@@ -346,7 +370,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +404,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

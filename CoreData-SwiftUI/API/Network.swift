@@ -15,19 +15,6 @@ enum APIError: Error {
     
 }
 
-class StorageManager {
-    static let shared = StorageManager()
-    
-    func setToken(_ token: String) {
-        UserDefaults.standard.set(token, forKey: "auth_token")
-        UserDefaults.standard.synchronize()
-    }
-    
-    var getToken: String {
-        return UserDefaults.standard.string(forKey: "auth_token") ?? ""
-    }
-}
-
 class APIManager {
     static let shared = APIManager()
     
@@ -99,6 +86,6 @@ class APIManager {
             statesData.stateName = datum["state_name"]
             CoreDataHelper.shared.saveData(statesData)
         }
-        
     }
+    
 }
