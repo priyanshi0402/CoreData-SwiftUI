@@ -19,37 +19,33 @@ struct CollegeListView: View {
         NavigationView {
             List {
                 ForEach(colleges, id: \.id) { college in
-                    HStack {
+                    NavigationLink {
+                        StudentListView(students: college.students, colleges: self.colleges, selectedCollege:  Binding(get: {
+                            return college
+                        }, set: { value, trans in
+                            
+                        }) )
+                        .navigationTitle("Students in \(college.name ?? "")")
+                    } label: {
                         Text(college.name ?? "")
-                        Spacer()
-//                        NavigationLink(destination: CollegeFromView(isForView: true, college: college)) {
-//                            VStack {
-//                                Image(systemName: "info.circle")
-//                            }
-//                            
-//                        }
-                        Button(action: {
-                            // Handle edit button action here
-                            // You can navigate to CollegeFormView with edit mode enabled, for example
-//                             NavigationLink(destination: CollegeFromView()) {
-//                                 Image(systemName: "pencil.circle")
-//                             }
-                        }) {
-                            Image(systemName: "info.circle")
-//                            Image(systemName: "pencil.circle")
-                        }
                     }
-                    
                 }
             }
             .navigationTitle("Colleges")
-            .navigationBarItems(trailing: NavigationLink(destination: CollegeFromView(), isActive: $isShowFormView) {
+            .navigationBarItems(trailing: NavigationLink(destination: CollegeFormView(), isActive: $isShowFormView) {
                 Button(action: {
                     self.isShowFormView = true
                 }, label: {
                     Image(systemName: "plus")
+                    Text("Add College")
                 })
             })
+            .navigationBarItems(trailing: NavigationLink(destination: {
+                StudentFormView(colleges: self.colleges)
+            }, label: {
+                Image(systemName: "plus")
+                Text("Add Student")
+            }))
         }
     }
 }

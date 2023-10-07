@@ -24,6 +24,7 @@ class CoreDataHelper {
     }
     
     func fetchData<T: NSManagedObject>(type: T.Type, entityName: String) -> [T] {
+//        Student
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: entityName))
         do {
             let results = try viewContext.fetch(fetchRequest)

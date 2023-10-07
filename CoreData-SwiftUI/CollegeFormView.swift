@@ -16,10 +16,9 @@ final class AppRootManager: ObservableObject {
     }
 }
 
-struct CollegeFromView: View {
+struct CollegeFormView: View {
     
     @State private var selectedState: String = "Select State"
-//    @State private var text = ""
     @State private var selectedCity: String = ""
     @State private var collegeName: String = ""
     @State private var universityName: String = ""
@@ -184,6 +183,6 @@ struct CustomNavigationPicker<Destination: View>: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        CollegeFromView()
+        CollegeFormView()
     }
 }

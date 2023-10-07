@@ -17,11 +17,16 @@
 		5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */; };
 		5BDB50462ABC29B100181F7A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDB50452ABC29B100181F7A /* Network.swift */; };
 		AF39E2AF2AB98238009F96D4 /* CoreData_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */; };
-		AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */; };
+		AF39E2B12AB98238009F96D4 /* CollegeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B02AB98238009F96D4 /* CollegeFormView.swift */; };
 		AF39E2B32AB9823B009F96D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF39E2B22AB9823B009F96D4 /* Assets.xcassets */; };
 		AF39E2B62AB9823B009F96D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF39E2B52AB9823B009F96D4 /* Preview Assets.xcassets */; };
 		AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B72AB9823B009F96D4 /* Persistence.swift */; };
 		AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF39E2B92AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld */; };
+		AFDEC79D2AC9C72000033EC0 /* StudentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEC79C2AC9C72000033EC0 /* StudentListView.swift */; };
+		AFDEC7A02AC9CD8800033EC0 /* College+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEC79E2AC9CD8800033EC0 /* College+CoreDataClass.swift */; };
+		AFDEC7A12AC9CD8800033EC0 /* College+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEC79F2AC9CD8800033EC0 /* College+CoreDataProperties.swift */; };
+		AFDEC7A32AC9D20C00033EC0 /* StudentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEC7A22AC9D20C00033EC0 /* StudentFormView.swift */; };
+		AFDEC7A52AC9D55800033EC0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEC7A42AC9D55800033EC0 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +41,17 @@
 		5BDB50452ABC29B100181F7A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		AF39E2AB2AB98238009F96D4 /* CoreData-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreData-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_SwiftUIApp.swift; sourceTree = "<group>"; };
-		AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeFromView.swift; sourceTree = "<group>"; };
+		AF39E2B02AB98238009F96D4 /* CollegeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeFormView.swift; sourceTree = "<group>"; };
 		AF39E2B22AB9823B009F96D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF39E2B52AB9823B009F96D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF39E2B72AB9823B009F96D4 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		AF39E2BA2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		AF39E2C12AB98367009F96D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AFDEC79C2AC9C72000033EC0 /* StudentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListView.swift; sourceTree = "<group>"; };
+		AFDEC79E2AC9CD8800033EC0 /* College+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "College+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AFDEC79F2AC9CD8800033EC0 /* College+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "College+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AFDEC7A22AC9D20C00033EC0 /* StudentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFormView.swift; sourceTree = "<group>"; };
+		AFDEC7A42AC9D55800033EC0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		5B0368152ABEDAE1001DE41F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AFDEC79E2AC9CD8800033EC0 /* College+CoreDataClass.swift */,
+				AFDEC79F2AC9CD8800033EC0 /* College+CoreDataProperties.swift */,
 				5B0368162ABEDB12001DE41F /* Cities.swift */,
 			);
 			path = Model;
@@ -134,8 +146,11 @@
 				AF39E2AE2AB98238009F96D4 /* CoreData_SwiftUIApp.swift */,
 				5BDB503F2ABC1B0300181F7A /* SplashScreenView.swift */,
 				5B03681B2AC17426001DE41F /* CollegeListView.swift */,
-				AF39E2B02AB98238009F96D4 /* CollegeFromView.swift */,
+				AF39E2B02AB98238009F96D4 /* CollegeFormView.swift */,
 				5BDB503D2ABB33B300181F7A /* StateCityView.swift */,
+				AFDEC79C2AC9C72000033EC0 /* StudentListView.swift */,
+				AFDEC7A22AC9D20C00033EC0 /* StudentFormView.swift */,
+				AFDEC7A42AC9D55800033EC0 /* ImagePicker.swift */,
 				AF39E2B22AB9823B009F96D4 /* Assets.xcassets */,
 				AF39E2B42AB9823B009F96D4 /* Preview Content */,
 			);
@@ -220,13 +235,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDEC79D2AC9C72000033EC0 /* StudentListView.swift in Sources */,
 				5BDB50402ABC1B0300181F7A /* SplashScreenView.swift in Sources */,
+				AFDEC7A12AC9CD8800033EC0 /* College+CoreDataProperties.swift in Sources */,
+				AFDEC7A52AC9D55800033EC0 /* ImagePicker.swift in Sources */,
+				AFDEC7A32AC9D20C00033EC0 /* StudentFormView.swift in Sources */,
 				5B8D66A62AB9955700B91E97 /* CoreDataHelper.swift in Sources */,
+				AFDEC7A02AC9CD8800033EC0 /* College+CoreDataClass.swift in Sources */,
 				5BDB50462ABC29B100181F7A /* Network.swift in Sources */,
 				5B8F842A2AC29DD200A0629F /* StorageManager.swift in Sources */,
 				AF39E2B82AB9823B009F96D4 /* Persistence.swift in Sources */,
 				5BDB503E2ABB33B300181F7A /* StateCityView.swift in Sources */,
-				AF39E2B12AB98238009F96D4 /* CollegeFromView.swift in Sources */,
+				AF39E2B12AB98238009F96D4 /* CollegeFormView.swift in Sources */,
 				5BAF63822AC80D0A00E7544E /* Enums.swift in Sources */,
 				5B0368172ABEDB12001DE41F /* Cities.swift in Sources */,
 				AF39E2BB2AB9823B009F96D4 /* CoreData_SwiftUI.xcdatamodeld in Sources */,
